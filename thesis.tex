@@ -1,4 +1,4 @@
-\documentclass[a4,12pt,masters,oneside,final]{udthesis}
+\documentclass[12pt,oneside]{udthesis}
 
 %----------------------------------------------------------------------------------------
 %	Atributes Settings
@@ -7,30 +7,35 @@
 \def \study{ITM} % possible options: ITM, SWD, MSD, IRM, IMS
 
 % More about you and your thesis:
-\def \title{<Title of Your Thesis>}
-\def \subtitle{<The subtitle.>}
-\def \yourName{<your name>}
-\def \yourIdentifier{<1700000017>}
+\def \title{PRA TESIS}
+\def \subtitle{PENGARUH FITUR BINAAN TERHADAP AKTIVITAS DI JALAN PINGGIR LAUT}
+\def \yourName{MUHAMMAD ULIAH SHAFAR}
+\def \yourIdentifier{21020119420029}
 \def \yourPlace{<place>}
 \def \submissionDate{<date>}  % month year. e.g. June 2017
 \def \yourAdvisor{<firstname lastname>}
-
-\def \thisDocumentIsA{Thesis} % possible options:
+\def \yourNipAdvisor{<xxxxxxxxx xxxxxxxx>}
+\def \yourSecAdvisor{<firstname lastname>}
+\def \yourNipSecAdvisor{<xxxxxxxxx xxxxxxxx>}
+%\def \thisDocumentIsA{Thesis} % possible options:
                      % Thesis  .... for Master's Thesis   / Masterarbeit
                      % Thesis  .... for Bachelor's Thesis / Bachelorarbeit
                      % Seminar .... for Seminar Work      / Seminararbeit
                      % Project .... for Project Work      / Projektarbeit
 
 % ITM/SWD/IRM: you could possibly write in German.
-\def \yourLanguage{english} % possible options: german, english
-
-
+%\def \yourLanguage{english} % possible options: german, english
 
 \begin{document}
 
 
-
 \subfile{subfiles/01titlepage.tex}
 
+\pagenumbering{roman}
+\subfile{subfiles/02declaration.tex}
+\clearpage
+\subfile{subfiles/03validation.tex}
+\subfile{subfiles/04abstract.tex}
+\subfile{subfiles/05acknowledge.tex}
 
 \end{document}

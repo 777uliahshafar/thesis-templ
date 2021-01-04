@@ -37,8 +37,36 @@
 \setmainlanguage{bahasai}
 \setotherlanguages{english}
 
-\addto\captionsenglish{\renewcommand{\figurename}{Gambar}} % Rename caption's command
-\addto\captionsenglish{\renewcommand{\tablename}{Tabel}}
+
+% Rename caption's command for bahasai
+\addto\captionsmalay{
+    \renewcommand{\abstractname}{ABSTRACT}
+}
+% Rename caption's command for english
+\addto\captionsenglish{
+    \renewcommand{\figurename}{Gambar}
+    \renewcommand{\tablename}{Tabel}
+    \renewcommand{\abstractname}{ABSTRACT}
+}
+
+%----------------------------------------------------------------------------------------
+%	DOCUMENT MARGINS
+%----------------------------------------------------------------------------------------
+
+\usepackage{geometry} % Required for adjusting page dimensions and margins
+
+\geometry{
+	paper=a4paper, % Paper size, change to letterpaper for US letter size
+	top=3cm, % Top margin
+	bottom=3cm, % Bottom margin
+	left=4cm, % Left margin
+	right=3cm, % Right margin
+	headheight=0.75cm, % Header height
+	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
+	headsep=0.75cm, % Space from the top margin to the baseline of the header
+	showframe, % Uncomment to show how the type block is set on the page
+}
+
 
 %----------------------------------------------------------------------------------------
 % PREAMBLE OF FIGURES
@@ -59,7 +87,46 @@
 %\setkeys{Gin}{draft} %Render image for draft
 
 %----------------------------------------------------------------------------------------
+% PREAMBLE OF TABLE AND LIST
+
+\usepackage{tabularx}
+\usepackage{booktabs} % Required for better horizontal rules in tables
+
+%----------------------------------------------------------------------------------------
 % CONFIGURATION OF SUBFILE
 \usepackage{subfiles}
 \newcommand{\onlyinsubfile}[1]{#1}
 \newcommand{\notinsubfile}[1]{}
+
+%----------------------------------------------------------------------------------------
+%	FONTS
+%----------------------------------------------------------------------------------------
+% LUALATEX FONT
+\usepackage{fontspec}
+\setmainfont{Arial} %Altex main font documents, default= Modern
+
+%----------------------------------------------------------------------------------------
+% CONFIGURATION OF TEXT(PARAGRAPH, SECTION, DATE, OTHERS)
+
+
+\usepackage{lipsum} % Add  dummy text
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace} %Alter spacing in paragraph
+\onehalfspacing %Specify spacing of setspace
+
+\usepackage[bahasai, calc]{datetime2} %Formating date or DTMtoday command, files ldf needs customization. Removes showdayofweek.
+
+%----------------------------------------------------------------------------------------
+%	LaTeX MACROS AND COMMANDS
+%----------------------------------------------------------------------------------------
+\renewenvironment{abstract}{%
+    \clearpage
+    \begin{center}%
+    \doublespacing
+        {\bfseries \abstractname\vspace{-.5em}\vspace{30pt}}%
+    \end{center}%
+%    \quotation
+    }
+{
+%\endquotation
+\vspace{14pt}}
