@@ -32,11 +32,12 @@
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 % PREAMBLE OF ENGLISH LANGUAGE HYPHENATION
+% Malay happen to replace bahasai command
 %\usepackage[english]{babel} %PdfLatex Compiler Engine
 \usepackage{polyglossia} %LuaLatex Compiler Engine
 \setmainlanguage{bahasai}
 \setotherlanguages{english}
-
+\PolyglossiaSetup{malay}{indentfirst=true}
 
 % Rename caption's command for bahasai
 \addto\captionsmalay{
@@ -61,11 +62,68 @@
 	bottom=3cm, % Bottom margin
 	left=4cm, % Left margin
 	right=3cm, % Right margin
-	headheight=0.75cm, % Header height
+%	headheight=0.75cm, % Header height
 	footskip=1.5cm, % Space from the bottom margin to the baseline of the footer
-	headsep=0.75cm, % Space from the top margin to the baseline of the header
+%	headsep=0.75cm, % Space from the top margin to the baseline of the header
 	showframe, % Uncomment to show how the type block is set on the page
 }
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+%\setcounter{secnumdepth}{3}% number subsubsection in report class
+
+\usepackage{titlesec}
+\makeatletter
+% reformat chapter number
+\renewcommand{\thechapter}{\Roman{chapter}}
+\renewcommand \thesection{\arabic{chapter}.\arabic{section}}
+\renewcommand \thesubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}}
+\renewcommand \thesubsubsection{\arabic{chapter}.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\titleformat{\chapter} %command
+[display]%shape
+{\normalfont\fontsize{12}{15}\filcenter\bfseries}%format
+{BAB \thechapter}%label
+{0pt}%sep
+{\vspace{0pt}}%before-title
+[]%after-title
+
+\titleformat{\section} %command
+{\normalfont\fontsize{12}{15}\bfseries}%format
+{\thesection}%label
+{12pt}%sep
+{\vspace{0pt}}%before-title
+[]%after-title
+
+\titleformat{\subsection} %command
+%shape
+{\normalfont\fontsize{12}{15}\bfseries}%format
+{\thesubsection}%label
+{12pt}%sep
+{}%before-title
+[]%after-title
+
+%\titleformat{\subsubsection} %command
+%shape
+%{\normalfont\fontsize{12}{15}\bfseries}%format
+%{\thesubsubsection}%label
+%{12pt}%sep
+%{}%before-title
+%[]%after-title
+
+\titlespacing*{\chapter}{0pt}%left
+{-20pt plus 4pt minus 2pt}%before
+{30pt plus 2pt minus 2pt}%after
+\titlespacing\section{0pt}
+{12pt plus 4pt minus 2pt}
+{0pt plus 2pt minus 2pt}
+\titlespacing\subsection{0pt}
+{12pt plus 4pt minus 2pt}
+{0pt plus 2pt minus 2pt}
+\titlespacing\subsubsection{0pt}
+{12pt plus 4pt minus 2pt}
+{0pt plus 2pt minus 2pt}
 
 
 %----------------------------------------------------------------------------------------
@@ -113,6 +171,11 @@
 \usepackage[hidelinks]{hyperref}
 \usepackage{setspace} %Alter spacing in paragraph
 \onehalfspacing %Specify spacing of setspace
+
+\setlength{\parindent}{1cm} %Alter indentation
+
+\usepackage{indentfirst} %Indent the first paragraph
+%\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1} %Insert Keyword Command
 
 \usepackage[bahasai, calc]{datetime2} %Formating date or DTMtoday command, files ldf needs customization. Removes showdayofweek.
 
