@@ -42,6 +42,9 @@
 % Rename caption's command for bahasai
 \addto\captionsmalay{
     \renewcommand{\abstractname}{ABSTRACT}
+    \renewcommand{\contentsname}{DAFTAR ISI}
+    \renewcommand{\listfigurename}{DAFTAR GAMBAR}
+    \renewcommand{\listtablename}{DAFTAR TABEL}
 }
 % Rename caption's command for english
 \addto\captionsenglish{
@@ -67,7 +70,14 @@
 %	headsep=0.75cm, % Space from the top margin to the baseline of the header
 	showframe, % Uncomment to show how the type block is set on the page
 }
-
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+\usepackage[titles]{tocloft}
+\setlength{\cftbeforechapskip}{3pt}
+\renewcommand{\cftchapfont}{\normalfont}%change chap to normal
+\renewcommand{\cftchappagefont}{\normalfont}%change num page to normal
+\renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}%add dots and change dots to normal
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -113,7 +123,7 @@
 %[]%after-title
 
 \titlespacing*{\chapter}{0pt}%left
-{-20pt plus 4pt minus 2pt}%before
+{0pt plus 4pt minus 2pt}%before
 {30pt plus 2pt minus 2pt}%after
 \titlespacing\section{0pt}
 {12pt plus 4pt minus 2pt}
@@ -182,12 +192,11 @@
 %----------------------------------------------------------------------------------------
 %	LaTeX MACROS AND COMMANDS
 %----------------------------------------------------------------------------------------
+
+
 \renewenvironment{abstract}{%
     \clearpage
-    \begin{center}%
-    \doublespacing
-        {\bfseries \abstractname\vspace{-.5em}\vspace{30pt}}%
-    \end{center}%
+    \chapter*{\bfseries\abstractname\vspace{\z@}}%
 %    \quotation
     }
 {
