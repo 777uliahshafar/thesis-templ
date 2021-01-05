@@ -38,11 +38,21 @@
 \subfile{subfiles/05acknowledge.tex}
 
 \tableofcontents
+\clearpage
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+\clearpage
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
 
 \clearpage
 \pagenumbering{arabic}
 \subfile{subfiles/06introduction.tex}
 
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+\bibliographystyle{apalike}
+\bibliography{biblio.bib}
 
 
 \end{document}

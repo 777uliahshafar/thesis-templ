@@ -45,13 +45,14 @@
     \renewcommand{\contentsname}{DAFTAR ISI}
     \renewcommand{\listfigurename}{DAFTAR GAMBAR}
     \renewcommand{\listtablename}{DAFTAR TABEL}
+    \renewcommand{\bibname}{DAFTAR PUSTAKA}
 }
 % Rename caption's command for english
-\addto\captionsenglish{
-    \renewcommand{\figurename}{Gambar}
-    \renewcommand{\tablename}{Tabel}
-    \renewcommand{\abstractname}{ABSTRACT}
-}
+%\addto\captionsenglish{
+%    \renewcommand{\figurename}{Gambar}
+%    \renewcommand{\tablename}{Tabel}
+%    \renewcommand{\abstractname}{ABSTRACT}
+%}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT MARGINS
@@ -78,6 +79,20 @@
 \renewcommand{\cftchapfont}{\normalfont}%change chap to normal
 \renewcommand{\cftchappagefont}{\normalfont}%change num page to normal
 \renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}%add dots and change dots to normal
+
+\renewcommand{\cfttabpresnum}{\tablename\enspace}
+\renewcommand{\cftfigpresnum}{\figurename\enspace}
+\newlength{\mylen}
+\settowidth{\mylen}{\cftfigpresnum\cftfigaftersnum}
+\addtolength{\cftfignumwidth}{\mylen}
+\settowidth{\mylen}{\cfttabpresnum\cfttabaftersnum}
+\addtolength{\cfttabnumwidth}{\mylen}
+
+\renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
+\renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
+
+\setlength{\cftfigindent}{0pt}%remove indentation
+\setlength{\cfttabindent}{0pt}%remove indentation
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION
 %----------------------------------------------------------------------------------------
@@ -148,7 +163,9 @@
 %\usepackage{subcaption} %Subfigure component
 %\usepackage[labelformat=parens,labelsep=quad, skip=3pt]{caption}  %Subcaption in 2 column img
 
-\usepackage[labelsep=period,labelfont=onehalfspacing]{caption}%Use caption* for add source
+\usepackage[labelsep=space,
+labelfont={bf},
+font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
 \setlength\belowcaptionskip{-10pt} %Reduce spacing caption figures
 
 
@@ -188,6 +205,17 @@
 %\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1} %Insert Keyword Command
 
 \usepackage[bahasai, calc]{datetime2} %Formating date or DTMtoday command, files ldf needs customization. Removes showdayofweek.
+
+%----------------------------------------------------------------------------------------
+% PREAMBLE OF BIBLIOGRAPHY
+\usepackage[round]{natbib}
+\setcitestyle{open={(},close={)}}
+%\def\biblio{\bibliographystyle{apalike}\bibliography{references.bib}} % bliography in subfile use with onlysubfile
+
+%\makeatletter
+%\renewcommand\@biblabel[1]{\textbf{#1.}} % Remove the square brackets from each bibliography item ('[1]' to '1.')
+%\makeatother
+
 
 %----------------------------------------------------------------------------------------
 %	LaTeX MACROS AND COMMANDS

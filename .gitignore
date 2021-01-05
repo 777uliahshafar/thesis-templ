@@ -8,6 +8,7 @@
 *.acr
 *.alg
 *.bbl
+*.bcf
 *.blg
 *.dvi
 *.glg
@@ -21,6 +22,7 @@
 *.mtc1
 *.out
 *.synctex.gz
+*.run.xml
 .DS_Store
 *.fls
 *.fdb_latexmk
