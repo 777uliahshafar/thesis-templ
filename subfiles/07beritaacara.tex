@@ -1,0 +1,92 @@
+\documentclass[../main.tex]{subfiles}
+
+\begin{document}
+
+\chapter*{BERITA ACARA SIDANG PRA TESIS}
+\addcontentsline{toc}{chapter}{BERITA ACARA}
+\setlength\parindent{0pt}
+Dengan ini saya selaku peserta sidang menyatakan bahwa telah melaksanakan sidang Pra Tesis pada:
+
+
+\begin{tabular}{@{}l@{\hspace{1em}:}@{\hspace{1em}}l@{}}
+    Hari &  \hariBerita\\
+    Tanggal & \DTMusedate{tanggalberita} \\
+    Waktu & \DTMusetime{waktuberita}\\
+    Tempat & \yourPlace\\
+\end{tabular}
+
+\vspace{\baselineskip}
+{\bf Dilakukan oleh:}
+
+\begin{tabular}{@{}l@{\hspace{1em}:}@{\hspace{1em}}p{.75\textwidth}}
+    Nama &  \yourName \\
+    NIM & \yourIdentifier \\
+    Judul & \subtitle \\
+\end{tabular}
+
+\vspace{\baselineskip}
+{\bf Dengan susunan tim penguji:}
+
+\begin{tabular}{@{}l@{\hspace{1em}:}@{\hspace{1em}}l@{}}
+    Pembimbing I & \yourAdvisor \\
+    Pembimbing II & \yourSecAdvisor \\
+\end{tabular}
+
+\vspace{\baselineskip}
+{\bf Pelaksanaan sidang:}
+\begin{enumerate}[leftmargin = *]
+    \item Sidang Pra tesis dengan judul \subtitle. Dimulai pada pukul \DTMusetime{waktuberita}.
+\end{enumerate}
+
+\vspace{\baselineskip}
+{\bf Daftar Pertanyaan:}
+
+{\bf \yourAdvisor}
+\begin{enumerate}[leftmargin = *]
+    \item \ldots
+    \item \ldots
+    \item \ldots
+\end{enumerate}
+\vspace{\baselineskip}
+{\bf \yourSecAdvisor}
+\begin{enumerate}[leftmargin = *]
+    \item \ldots
+    \item \ldots
+    \item \ldots
+\end{enumerate}
+
+\vspace{\baselineskip}
+Demikian berita acara sidang Pra Tesis ini dibuat sesuai dengan keadaan yang sebenar-benarnya. \ldots
+\vspace{30pt}
+
+\begin{flushright}
+\begin{tabular}{@{}l}
+
+Semarang, \DTMtoday \\
+Peserta sidang,
+\\
+\\
+\\
+\\
+\yourName \\
+NIM.\yourIdentifier
+\end{tabular}
+\end{flushright}
+
+\begin{center}
+\vspace{\baselineskip}
+Mengetahui
+
+\begin{tabular}{@{}ccc@{}}
+Pembimbing I	 & & Pembimbing II\\
+	 & & \\
+	 & & \\
+	 & & \\
+\yourAdvisor & & \yourSecAdvisor \\
+
+NIM.\yourNipAdvisor & & NIM.\yourNipSecAdvisor \\
+\end{tabular}
+\end{center}
+
+%\onlyinsubfile{\biblio}
+\end{document}

@@ -176,6 +176,35 @@ font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
 
 \usepackage{tabularx}
 \usepackage{booktabs} % Required for better horizontal rules in tables
+%\usepackage{multirow}
+
+\usepackage{paralist} %Inline list(inparaenum), always on top of enumitem
+%\usepackage{longtable} % Enable table cross multiple page
+%\usepackage{array} %Mostly formatting columns and spacing
+\usepackage{enumitem} % Required for list customisation
+
+\setlist{noitemsep} % No spacing between list items
+\setlist[itemize]{label=\textbullet, nosep, topsep=0pt, partopsep=0pt, parsep=0pt} % No spacing between itemize
+\setlist[enumerate]{nosep, topsep=0pt, partopsep=0pt, parsep=0pt} % No spacing between enumerate
+
+% Remove spacing between itemize env. inside table env., first column type for enumerate(e), second coulmn type for itemize(i)
+%\makeatletter
+%\newcolumntype{e}[1]{%
+%    >{\minipage[t]{\linewidth}\let\\\tabularnewline
+%      \enumerate
+%      \addtolength{\rightskip}{0pt plus 50pt}% for raggedright
+%      \setlength{\itemsep}{-\parsep}}%
+%    p{#1}%
+%    <{\@finalstrut\@arstrutbox\endenumerate\endminipage}}
+%
+%\newcolumntype{i}[1]{%
+%    >{\minipage[t]{\linewidth}\let\\\tabularnewline
+%      \itemize
+%      \addtolength{\rightskip}{0pt plus 50pt}% for raggedright
+%      \setlength{\itemsep}{-\parsep}}%
+%    p{#1}%
+%    <{\@finalstrut\@arstrutbox\enditemize\endminipage}}
+%\makeatother
 
 %----------------------------------------------------------------------------------------
 % CONFIGURATION OF SUBFILE
