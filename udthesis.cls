@@ -35,24 +35,26 @@
 % Malay happen to replace bahasai command
 %\usepackage[english]{babel} %PdfLatex Compiler Engine
 \usepackage{polyglossia} %LuaLatex Compiler Engine
-\setmainlanguage{bahasai}
+\setmainlanguage[variant=indonesian]{malay}
 \setotherlanguages{english}
 \PolyglossiaSetup{malay}{indentfirst=true}
 
+
 % Rename caption's command for bahasai
 \addto\captionsmalay{
-    \renewcommand{\abstractname}{ABSTRACT}
+    \renewcommand{\abstractname}{ABSTRAK}
     \renewcommand{\contentsname}{DAFTAR ISI}
     \renewcommand{\listfigurename}{DAFTAR GAMBAR}
     \renewcommand{\listtablename}{DAFTAR TABEL}
     \renewcommand{\bibname}{DAFTAR PUSTAKA}
 }
 % Rename caption's command for english
-%\addto\captionsenglish{
+\addto\captionsenglish{
+    \renewcommand{\abstractname}{ABSTRACT}
 %    \renewcommand{\figurename}{Gambar}
 %    \renewcommand{\tablename}{Tabel}
 %    \renewcommand{\abstractname}{ABSTRACT}
-%}
+}
 
 %----------------------------------------------------------------------------------------
 %	DOCUMENT MARGINS
@@ -230,7 +232,7 @@ font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
 
 \setlength{\parindent}{1cm} %Alter indentation
 
-\usepackage{indentfirst} %Indent the first paragraph
+%\usepackage{indentfirst} %Indent the first paragraph
 %\providecommand{\keywords}[1]{\textbf{\textit{Keywords---}} #1} %Insert Keyword Command
 
 \usepackage[bahasai, calc]{datetime2} %Formating date or DTMtoday command, files ldf needs customization. Removes showdayofweek.
@@ -249,8 +251,6 @@ font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
 %----------------------------------------------------------------------------------------
 %	LaTeX MACROS AND COMMANDS
 %----------------------------------------------------------------------------------------
-
-
 \renewenvironment{abstract}{%
     \clearpage
     \chapter*{\bfseries\abstractname\vspace{\z@}}%
@@ -258,4 +258,4 @@ font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
     }
 {
 %\endquotation
-\vspace{14pt}}
+\vspace{\baselineskip}}
