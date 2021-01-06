@@ -127,7 +127,7 @@
 %shape
 {\normalfont\fontsize{12}{15}\bfseries}%format
 {\thesubsection}%label
-{12pt}%sep
+{2pt}%sep
 {}%before-title
 []%after-title
 
