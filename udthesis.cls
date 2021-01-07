@@ -161,7 +161,7 @@
 \graphicspath{{figures/}{../figures/}}% Specifies where to look for included images (trailing slash required)
 %\graphicspath{{figures/}{./}}
 
-%\usepackage{wrapfig} % Allows in-line images
+\usepackage{wrapfig} % Allows in-line images
 %\usepackage{subcaption} %Subfigure component
 %\usepackage[labelformat=parens,labelsep=quad, skip=3pt]{caption}  %Subcaption in 2 column img
 
@@ -259,3 +259,15 @@ font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
 {
 %\endquotation
 \vspace{\baselineskip}}
+
+\newenvironment{prakata}
+ {\small
+ \null\vfil
+ \quotation
+  \list{}{%
+%    \setlength{\leftmargin}{1cm}% <---------- CHANGE HERE
+%    \setlength{\rightmargin}{\leftmargin+1cm}%
+    \singlespacing
+  }%
+  \item\relax}
+ {\endquotation\null\vfil\endlist}
