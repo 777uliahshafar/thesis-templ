@@ -81,6 +81,7 @@
 \renewcommand{\cftchapfont}{\normalfont}%change chap to normal
 \renewcommand{\cftchappagefont}{\normalfont}%change num page to normal
 \renewcommand{\cftchapleader}{\cftdotfill{\cftsecdotsep}}%add dots and change dots to normal
+\renewcommand\cftchappresnum{BAB }
 
 \renewcommand{\cfttabpresnum}{\tablename\enspace}
 \renewcommand{\cftfigpresnum}{\figurename\enspace}
@@ -89,6 +90,9 @@
 \addtolength{\cftfignumwidth}{\mylen}
 \settowidth{\mylen}{\cfttabpresnum\cfttabaftersnum}
 \addtolength{\cfttabnumwidth}{\mylen}
+
+\settowidth\mylen{BAB 1\ }
+\cftsetindents{chap}{0pt}{\mylen}
 
 \renewcommand{\thefigure}{\arabic{chapter}.\arabic{figure}}
 \renewcommand{\thetable}{\arabic{chapter}.\arabic{table}}
