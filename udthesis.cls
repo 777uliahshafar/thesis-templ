@@ -209,6 +209,18 @@ font={it,small,onehalfspacing}]{caption}%Use \caption* for add source
 %\makeatother
 
 %----------------------------------------------------------------------------------------
+% CONFIGURATION OF TIKZ
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows}
+
+% Configuration of Tikz FlowChart
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black]
+
+\tikzstyle{arrow} = [thick,->,>=stealth]
+\tikzstyle{doublearrow} = [densely dotted,<->,>=stealth]
+\tikzstyle{dotted} = [loosely dotted,>=stealth]
+
+%----------------------------------------------------------------------------------------
 % CONFIGURATION OF SUBFILE
 \usepackage{subfiles}
 \newcommand{\onlyinsubfile}[1]{#1}
